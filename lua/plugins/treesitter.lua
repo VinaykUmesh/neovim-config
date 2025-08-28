@@ -14,8 +14,13 @@ return {
         ts_config.setup({
             -- make sure we have vim, vimdoc, lua, java, javascript, typescript, html, css, json, tsx, markdown, markdown, inline markdown and gitignore highlighting servers
             ensure_installed = {"vim", "vimdoc", "lua", "java", "javascript", "typescript", "html", "css", "json", "tsx", "markdown", "markdown_inline", "gitignore"},
+            -- automatically install missing parsers when opening a file
+            auto_install = true,
             -- make sure highlighting it anabled
-            highlight = {enable = true},
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
             -- enable tsx auto closing tag creation
             autotag = {
                 enable = true

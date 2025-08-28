@@ -13,6 +13,14 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	})
 end
 
+-- Syntax highlighter for java
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.cmd("TSBufEnable highlight")
+  end,
+})
+
 -- Add the path to the lazy plugin repositories to the vim runtime path
 vim.opt.rtp:prepend(lazypath)
 
